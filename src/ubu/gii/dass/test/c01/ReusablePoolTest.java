@@ -3,11 +3,14 @@
  */
 package ubu.gii.dass.test.c01;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import ubu.gii.dass.c01.ReusablePool;
 
 /**
  * @author alumno
@@ -34,7 +37,10 @@ public class ReusablePoolTest {
 	 */
 	@Test
 	public void testGetInstance() {
-		fail("Not yet implemented");
+		ReusablePool rp1 = ReusablePool.getInstance();
+		ReusablePool rp2 = ReusablePool.getInstance();
+
+		assertEquals(rp1, rp2);
 	}
 
 	/**
@@ -46,7 +52,9 @@ public class ReusablePoolTest {
 	}
 
 	/**
-	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}.
+	 * Test method for
+	 * {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}
+	 * .
 	 */
 	@Test
 	public void testReleaseReusable() {
