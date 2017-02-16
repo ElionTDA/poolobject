@@ -5,12 +5,12 @@ package ubu.gii.dass.test.c01;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import ubu.gii.dass.c01.DuplicatedInstanceException;
 import ubu.gii.dass.c01.NotFreeInstanceException;
 import ubu.gii.dass.c01.Reusable;
 import ubu.gii.dass.c01.ReusablePool;
@@ -67,10 +67,22 @@ public class ReusablePoolTest {
 	 * Test method for
 	 * {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}
 	 * .
+	 * 
+	 * @throws DuplicatedInstanceException
 	 */
 	@Test
 	public void testReleaseReusable() {
-		fail("Not yet implemented");
-	}
+		ReusablePool rp = ReusablePool.getInstance();
+		Reusable r1 = new Reusable();
+		Reusable r2 = r1;
 
+		assertTrue("Comprobamos que los dos objetos son el mismo.", r1.equals(r2));
+
+		try {
+			rp.releaseReusable(r1);
+			rp.releaseReusable(r2);
+		} catch (DuplicatedInstanceException e) {
+			assertTrue(true);
+		}
+	}
 }
