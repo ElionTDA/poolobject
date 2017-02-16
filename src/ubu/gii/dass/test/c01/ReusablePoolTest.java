@@ -108,6 +108,7 @@ public class ReusablePoolTest {
 
 		try {
 			rp.releaseReusable((Reusable) o);
+			
 
 			assertTrue(true);
 		} catch (DuplicatedInstanceException e) {
