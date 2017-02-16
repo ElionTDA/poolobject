@@ -101,4 +101,17 @@ public class ReusablePoolTest {
 		}
 	}
 
+	@Test
+	public void testReleaseReusableObject() {
+		ReusablePool rp = ReusablePool.getInstance();
+		Object o = new Object();
+
+		try {
+			rp.releaseReusable((Reusable) o);
+
+			assertTrue(true);
+		} catch (DuplicatedInstanceException e) {
+			assertTrue(true);
+		}
+	}
 }
