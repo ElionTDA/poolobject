@@ -5,3 +5,8 @@
 *.war
 *.ear
 /bin
+
+/src/ubu/gii/dass/test/*
+
+.*
+.gitignore
