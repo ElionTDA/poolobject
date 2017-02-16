@@ -85,4 +85,18 @@ public class ReusablePoolTest {
 			assertTrue(true);
 		}
 	}
+
+	@Test
+	public void testReleaseReusableNull() {
+		ReusablePool rp = ReusablePool.getInstance();
+		Reusable r = null;
+
+		assertTrue("Comprobamos que el objeto es null.", r == null);
+
+		try {
+			rp.releaseReusable(r);
+		} catch (DuplicatedInstanceException e) {
+			e.printStackTrace();
+		}
+	}
 }
