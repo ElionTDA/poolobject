@@ -1,5 +1,5 @@
 /**
- * 
+ * Paquete que contiene los test de la clase ReusablePool.
  */
 package ubu.gii.dass.test.c01;
 
@@ -16,12 +16,15 @@ import ubu.gii.dass.c01.Reusable;
 import ubu.gii.dass.c01.ReusablePool;
 
 /**
- * @author alumno
- *
+ * @author Diego Martín
+ * @author Daniel Santidrian
+ * @version 0.1
  */
 public class ReusablePoolTest {
 
 	/**
+	 * Se ejecuta antes de cada test.
+	 * 
 	 * @throws java.lang.Exception
 	 */
 	@Before
@@ -29,6 +32,8 @@ public class ReusablePoolTest {
 	}
 
 	/**
+	 * Se ejecuta despues de cada test.
+	 * 
 	 * @throws java.lang.Exception
 	 */
 	@After
@@ -37,6 +42,8 @@ public class ReusablePoolTest {
 
 	/**
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#getInstance()}.
+	 * 
+	 * Comprobamos que funcione bien el patrón Singleton.
 	 */
 	@Test
 	public void testGetInstance() {
@@ -48,6 +55,8 @@ public class ReusablePoolTest {
 
 	/**
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#acquireReusable()}.
+	 * 
+	 * Comprueba el funcionamiento correcto de acquireReusable.
 	 */
 	@Test
 	public void testAcquireReusable() {
@@ -86,6 +95,13 @@ public class ReusablePoolTest {
 		}
 	}
 
+	/**
+	 * Test method for
+	 * {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}
+	 * .
+	 * 
+	 * @throws DuplicatedInstanceException
+	 */
 	@Test
 	public void testReleaseReusableNull() throws NotFreeInstanceException {
 		ReusablePool rp = ReusablePool.getInstance();
@@ -101,6 +117,13 @@ public class ReusablePoolTest {
 		}
 	}
 
+	/**
+	 * Test method for
+	 * {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}
+	 * .
+	 * 
+	 * @throws DuplicatedInstanceException
+	 */
 	@Test
 	public void testReleaseReusableObject() {
 		ReusablePool rp = ReusablePool.getInstance();
