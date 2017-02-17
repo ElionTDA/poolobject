@@ -75,7 +75,7 @@ public class ReusablePoolTest {
 	/**
 	 * Test method for
 	 * {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}
-	 * .
+	 * COmprueba el funcionamiento correcto del metodo releaseReusable
 	 * 
 	 * @throws DuplicatedInstanceException
 	 */
@@ -98,7 +98,8 @@ public class ReusablePoolTest {
 	/**
 	 * Test method for
 	 * {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}
-	 * .
+	 * Comprobamos el comportamiento del metodo releaseReusable al pasarle como parametro
+	 * un objeto Reusable inicializado a null.
 	 * 
 	 * @throws DuplicatedInstanceException
 	 */
@@ -120,7 +121,8 @@ public class ReusablePoolTest {
 	/**
 	 * Test method for
 	 * {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}
-	 * .
+	 * Comprobamos el funcionamiento del metodo releaseReusable al intentar pasarle como
+	 * parametro un objeto de tipo Object.
 	 * 
 	 * @throws DuplicatedInstanceException
 	 */
